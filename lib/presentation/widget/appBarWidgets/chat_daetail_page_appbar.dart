@@ -52,9 +52,12 @@ class ChatDetailPageAppBar extends StatelessWidget
                   ],
                 ),
               ),
-              Icon(
-                Icons.videocam_rounded,
-                color: Colors.grey.shade700,
+              Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: Icon(
+                  Icons.videocam_rounded,
+                  color: Colors.grey.shade700,
+                ),
               ),
               Icon(
                 Icons.more_vert_rounded,

@@ -6,44 +6,57 @@ import 'package:flutter/material.dart';
 
 List<ChatModel> pinnedChatModel = [
   ChatModel(
-      name: "Mike \n Wazowski",
-      image: AppImages.mikeWazowski,
-      body: "That's awesome! ..."),
+    name: "Mike \n Wazowski",
+    image: AppImages.mikeWazowski,
+    body: "That's awesome! ...",
+    color: Colors.grey.shade100,
+  ),
   ChatModel(
-      name: "Darlene \n Steward",
-      image: AppImages.darleneSteward,
-      body: "Pls take a look at the..."),
+    name: "Darlene \n Steward",
+    image: AppImages.darleneSteward,
+    body: "Pls take a look at the... ",
+    color: Colors.blue.shade100,
+  ),
   ChatModel(
-      name: "Gregory \n Robertson",
-      image: AppImages.gregoryRobertson,
-      body: "Preparing for next vac..."),
+    name: "Gregory \n Robertson",
+    image: AppImages.gregoryRobertson,
+    body: "Preparing for next vac...",
+    color: Colors.grey.shade100,
+  ),
   ChatModel(
-      name: "Dwight \n Wilson",
-      image: AppImages.dwightWilson,
-      body: "I'd like to watch ... "),
+    name: "Dwight \n Wilson",
+    image: AppImages.dwightWilson,
+    body: "I'd like to watch ... ",
+    color: Colors.grey.shade100,
+  ),
 ];
 
 List<ChatModel> recentChatModel = [
   ChatModel(
       name: "Darlene Steward",
       image: AppImages.darleneSteward,
-      body: "Pls take a look at the images."),
+      body: "Pls take a look at the images.",
+      color: null),
   ChatModel(
       name: "Fullsnack Designers",
       image: AppImages.fullsnackDesigners,
-      body: "Hello guys, we have discussed about ..."),
+      body: "Hello guys, we have discussed about ...",
+      color: null),
   ChatModel(
       name: "Lee Williamson",
       image: AppImages.leeWilliamson,
-      body: "Yes, that's gonna work, hopefully."),
+      body: "Yes, that's gonna work, hopefully.",
+      color: null),
   ChatModel(
       name: "Ronald Mccoy",
       image: AppImages.ronaldMccoy,
-      body: "Thanks dude 😉"),
+      body: "Thanks dude 😉",
+      color: null),
   ChatModel(
       name: "Albert Bell",
       image: AppImages.albertBell,
-      body: "I'm happy this anime has such grea..."),
+      body: "I'm happy this anime has such grea...",
+      color: null),
 ];
 List<ChatMessage> chatMessage = [
   ChatMessage(

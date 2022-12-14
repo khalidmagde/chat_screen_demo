@@ -17,23 +17,27 @@ final hDateTime = DateFormat('hh:mm').format(DateTime.now());
 final dDateTime = DateFormat('EEE').format(DateTime.now());
 
 class _RecentChatState extends State<RecentChat> {
+  final double minHieght = 460;
   @override
   Widget build(BuildContext context) {
     return SlidingUpPanel(
       maxHeight: double.maxFinite,
-      minHeight: 460,
-      panel: Scaffold(
+      minHeight: minHieght,
+      panelBuilder: (controller) => Scaffold(
         appBar: CustomAppBarRecent(),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Row(
-                children: [
-                  categoryBuilder(text: "All chats", color: Colors.blue),
-                  categoryBuilder(text: "Personal"),
-                  categoryBuilder(text: "Work"),
-                  categoryBuilder(text: "Groubs"),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(left: 7.5),
+                child: Row(
+                  children: [
+                    categoryBuilder(text: "All chats", color: Colors.blue),
+                    categoryBuilder(text: "Personal"),
+                    categoryBuilder(text: "Work"),
+                    categoryBuilder(text: "Groubs"),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -80,42 +84,50 @@ class _RecentChatState extends State<RecentChat> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.0),
+          color: name == "Darlene Steward"
+              ? Colors.blue.shade100
+              : Colors.grey.shade100,
+        ),
         height: 80,
         width: double.infinity,
-        color: name == "Darlene Steward"
-            ? Colors.blue.shade100
-            : Colors.grey.shade100,
         child: Row(
           children: [
-            Stack(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image(
-                    image: AssetImage(image),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image(
+                      image: AssetImage(image),
+                      fit: BoxFit.fill,
+                      width: 40,
+                    ),
                   ),
-                ),
-                name == "Fullsnack Designers"
-                    ? Positioned(child: Text(""))
-                    : Positioned(
-                        bottom: 0,
-                        right: 0,
-                        child: Container(
-                          height: 10,
-                          width: 10,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              width: 2,
-                              color: Colors.white,
+                  name == "Fullsnack Designers"
+                      ? Positioned(child: Text(""))
+                      : Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: Container(
+                            height: 10,
+                            width: 10,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                width: 2,
+                                color: Colors.white,
+                              ),
+                              color: name == recentChatModel[0].name
+                                  ? Colors.yellow
+                                  : Colors.grey,
                             ),
-                            color: name == recentChatModel[0].name
-                                ? Colors.yellow
-                                : Colors.grey,
                           ),
                         ),
-                      ),
-              ],
+                ],
+              ),
             ),
             const SizedBox(
               width: 5,

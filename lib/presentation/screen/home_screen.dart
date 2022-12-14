@@ -23,57 +23,21 @@ class _HomePageScreenState extends State<HomePageScreen> {
       ),
       bottomNavigationBar: const CustomButtomNavgigationBar(),
       body: SafeArea(
-        child: Stack(
-          children: [
-            Scaffold(
-              appBar: CustomAppBarHome(),
-              body: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      //Mike
-                      PinnedChat(
-                        name: "${pinnedChatModel[0].name}",
-                        body: "${pinnedChatModel[0].body}",
-                        image: AppImages.mikeWazowski,
-                      ),
-                      //Darlene
-                      PinnedChat(
-                        name: "${pinnedChatModel[1].name}",
-                        body: "${pinnedChatModel[1].body}",
-                        image: AppImages.darleneSteward,
-                        color: Colors.blue.shade100,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      //Greogory
-                      PinnedChat(
-                        name: "${pinnedChatModel[2].name}",
-                        body: "${pinnedChatModel[2].body}",
-                        image: AppImages.gregoryRobertson,
-                      ),
-                      //Dwight
-                      PinnedChat(
-                        name: "${pinnedChatModel[3].name}",
-                        body: "${pinnedChatModel[3].body}",
-                        image: AppImages.dwightWilson,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const RecentChat(),
-          ],
-        ),
-      ),
+          child: Stack(
+        children: [
+          Scaffold(
+            appBar: CustomAppBarHome(),
+            body: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 350 / 240, crossAxisCount: 2),
+                itemCount: pinnedChatModel.length,
+                itemBuilder: (context, i) {
+                  return PinnedChat(pinnedChatModel: pinnedChatModel[i]);
+                }),
+          ),
+          const RecentChat(),
+        ],
+      )),
     );
   }
 }

@@ -13,11 +13,14 @@ class CustomAppBarHome extends StatelessWidget implements PreferredSizeWidget {
           style: TextStyle(color: Colors.black),
         ),
         actions: const [
-          CircleAvatar(
-            backgroundColor: Colors.white,
-            radius: 17,
+          Padding(
+            padding: EdgeInsets.only(right: 8.0),
             child: CircleAvatar(
-                backgroundImage: AssetImage(AppImages.albertBell), radius: 16),
+              backgroundColor: Colors.white,
+              radius: 17,
+              child: CircleAvatar(
+                  backgroundImage: AssetImage(AppImages.menna), radius: 16),
+            ),
           ),
         ],
       ),

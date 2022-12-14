@@ -14,7 +14,7 @@ class CustomAppBarRecent extends StatelessWidget
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 5),
+            padding: const EdgeInsets.only(right: 9),
             child: CircleAvatar(
               backgroundColor: Colors.white,
               radius: 17,

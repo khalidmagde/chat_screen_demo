@@ -9,6 +9,7 @@ class AppImages {
   static const String leeWilliamson = "$rootImage/leeWilliamson.png";
   static const String mikeWazowski = "$rootImage/mikeWazowski.png";
   static const String ronaldMccoy = "$rootImage/ronaldMccoy.png";
+  static const String menna = "$rootImage/menna.png";
   static const String recOne = "$rootImage/Rectangle.png";
   static const String recTwo = "$rootImage/Rectangle(1).png";
   static const String recThree = "$rootImage/Rectangle(2).png";

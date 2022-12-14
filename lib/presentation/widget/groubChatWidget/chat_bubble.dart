@@ -63,8 +63,14 @@ class _ChatBubbleState extends State<ChatBubble> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(widget.chatMessage.name!),
-                                const Text("admin"),
+                                Text(
+                                  widget.chatMessage.name!,
+                                  style:
+                                      TextStyle(color: Colors.orange.shade600),
+                                ),
+                                Text("admin",
+                                    style:
+                                        TextStyle(color: Colors.grey.shade400)),
                               ],
                             ),
                           ),
@@ -72,7 +78,10 @@ class _ChatBubbleState extends State<ChatBubble> {
                           Container(
                               padding: const EdgeInsets.only(right: 5),
                               alignment: Alignment.bottomRight,
-                              child: Text(hDateTime)),
+                              child: Text(
+                                hDateTime,
+                                style: TextStyle(color: Colors.grey.shade400),
+                              )),
                         ],
                       ),
               ),
@@ -85,27 +94,27 @@ class _ChatBubbleState extends State<ChatBubble> {
 
   Widget builderReceiver() {
     return Container(
-      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 2.6),
+      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 3.1),
       child: Column(
         children: [
           Row(
             children: [
               Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.blue.shade600,
                 ),
-                padding: const EdgeInsets.only(top: 16),
-                width: 200,
-                height: 100,
+                padding: const EdgeInsets.all(10),
+                width: 220,
+                height: 106,
                 child: Column(
                   children: [
                     Text(
                       widget.chatMessage.message,
-                      style: const TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white, height: 1.4),
                     ),
                     Container(
-                      padding: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.only(top: 10),
                       alignment: Alignment.bottomRight,
                       child: Text(
                         hDateTime,
@@ -115,7 +124,7 @@ class _ChatBubbleState extends State<ChatBubble> {
                   ],
                 ),
               ),
-              builderAvatar(image: AppImages.albertBell),
+              builderAvatar(image: AppImages.menna),
             ],
           ),
         ],
@@ -130,7 +139,11 @@ class _ChatBubbleState extends State<ChatBubble> {
         children: [
           CircleAvatar(
             backgroundColor: Colors.transparent,
-            child: Image.asset(image),
+            child: Image.asset(
+              image,
+              fit: BoxFit.fill,
+              width: 35,
+            ),
           ),
           Positioned(
             bottom: 0,
@@ -153,50 +166,3 @@ class _ChatBubbleState extends State<ChatBubble> {
     );
   }
 }
-
-
-
-
-
-/* Container(
-      padding: EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
-      child: Align(
-        alignment: widget.chatMessage.type == MessageType.Receiver
-            ? Alignment.topLeft
-            : Alignment.topRight,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: widget.chatMessage.type == MessageType.Receiver
-                ? Colors.grey.shade400
-                : Colors.white,
-          ),
-          padding: EdgeInsets.all(16),
-          child: widget.chatMessage.type == MessageType.Sender
-              ? Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(widget.chatMessage.name!),
-                        Text("admin"),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(widget.chatMessage.message),
-                  ],
-                )
-              : Column(
-                  children: [
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(widget.chatMessage.message),
-                  ],
-                ),
-        ),
-      ),
-    ); */
-  

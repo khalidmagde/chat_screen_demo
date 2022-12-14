@@ -92,17 +92,3 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
     );
   }
 }
-
-/* ListView.builder(
-            itemCount: chatMessage.length,
-            shrinkWrap: true,
-            padding: const EdgeInsets.only(top: 10, bottom: 10),
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, i) {
-              return ChatBubble(chatMessage: chatMessage[i]);
-            },
-          ), */
-
-/*  
-
- */
