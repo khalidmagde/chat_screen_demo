@@ -6,25 +6,25 @@ import 'package:flutter/material.dart';
 
 List<ChatModel> pinnedChatModel = [
   ChatModel(
-    name: "Mike \n Wazowski",
+    name: "Mike\nWazowski",
     image: AppImages.mikeWazowski,
     body: "That's awesome! ...",
     color: Colors.grey.shade100,
   ),
   ChatModel(
-    name: "Darlene \n Steward",
+    name: "Darlene\nSteward",
     image: AppImages.darleneSteward,
     body: "Pls take a look at the... ",
     color: Colors.blue.shade100,
   ),
   ChatModel(
-    name: "Gregory \n Robertson",
+    name: "Gregory\nRobertson",
     image: AppImages.gregoryRobertson,
     body: "Preparing for next vac...",
     color: Colors.grey.shade100,
   ),
   ChatModel(
-    name: "Dwight \n Wilson",
+    name: "Dwight\nWilson",
     image: AppImages.dwightWilson,
     body: "I'd like to watch ... ",
     color: Colors.grey.shade100,
@@ -62,7 +62,7 @@ List<ChatMessage> chatMessage = [
   ChatMessage(
       image: Image.asset(AppImages.recOne),
       message:
-          "Hello guys, we have discussed about\n post-corona vacation plan and our\n decision is to go to Bali. We will have a very\n big party after this corona ends! These are\n some images about our destination",
+          "Hello guys, we have discussed about\npost-corona vacation plan and our\ndecision is to go to Bali. We will have a very\nbig party after this corona ends! These are\nsome images about our destination",
       type: MessageType.Sender,
       name: "mike Mazowski"),
   ChatMessage(

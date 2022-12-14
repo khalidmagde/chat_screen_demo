@@ -1,3 +1,4 @@
+import 'package:chat_screen/core/constants/appimages.dart';
 import 'package:chat_screen/data/model/chat_model.dart';
 import 'package:chat_screen/data/static/static.dart';
 import 'package:flutter/material.dart';
@@ -64,12 +65,17 @@ class _PinnedChatState extends State<PinnedChat> {
                           ),
                         ),
                         Container(
-                            padding: EdgeInsets.all(8),
+                            padding: EdgeInsets.all(12),
                             child: Text(widget.pinnedChatModel.name!)),
                       ],
                     ),
                     Container(
-                      padding: EdgeInsets.all(12),
+                      padding: widget.pinnedChatModel.image ==
+                                  AppImages.mikeWazowski ||
+                              widget.pinnedChatModel.image ==
+                                  AppImages.dwightWilson
+                          ? EdgeInsets.only(right: 14)
+                          : EdgeInsets.only(left: 12),
                       child: Text(
                         widget.pinnedChatModel.body!,
                         style: TextStyle(
