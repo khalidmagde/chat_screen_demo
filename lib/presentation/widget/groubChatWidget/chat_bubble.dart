@@ -41,8 +41,8 @@ class _ChatBubbleState extends State<ChatBubble> {
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.grey.shade200,
                 ),
-                width: widget.chatMessage.message == "" ? 200 : 300,
-                height: widget.chatMessage.message == "" ? 198.1 : 130,
+                width: widget.chatMessage.message == "" ? 200 : 320,
+                height: widget.chatMessage.message == "" ? 198.1 : 140,
                 child: widget.chatMessage.type == MessageType.Receiver ||
                         widget.chatMessage.message == ""
                     ? Column(
@@ -74,7 +74,14 @@ class _ChatBubbleState extends State<ChatBubble> {
                               ],
                             ),
                           ),
-                          Text(widget.chatMessage.message),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: Text(
+                              widget.chatMessage.message,
+                              style: TextStyle(height: 1.2),
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
                           Container(
                               padding: const EdgeInsets.only(right: 5),
                               alignment: Alignment.bottomRight,
